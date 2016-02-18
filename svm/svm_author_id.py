@@ -48,4 +48,11 @@ from sklearn.metrics import accuracy_score
 print accuracy_score(pred, labels_test)
 #########################################################
 
+### Extracting Prediction f ###
+print(pred[10])
+print(pred[26])
+print(pred[50])
+
+print(sum(pred))
+
 
