@@ -42,8 +42,30 @@ pred = clf.predict(features_test)
 from sklearn.metrics import accuracy_score
 print accuracy_score(pred, labels_test)
 
+#### naive bayes
+from sklearn.naive_bayes import GaussianNB
+clf = GaussianNB()
+clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+from sklearn.metrics import accuracy_score
+print accuracy_score(pred, labels_test)
 
 
+#### svm
+from sklearn.svm import SVC
+clf = SVC(kernel="rbf", C=10000.0)
+clf.fit(features_train,labels_train)
+pred = clf.predict(features_test)
+from sklearn.metrics import accuracy_score
+print accuracy_score(pred, labels_test)
+
+### decision tree
+from sklearn import tree
+clf = tree.DecisionTreeClassifier(min_samples_split=20)
+clf = clf.fit(features_train, labels_train)
+pred = clf.predict(features_test)
+from sklearn.metrics import accuracy_score
+print accuracy_score(pred, labels_test)
 
 try:
     prettyPicture(clf, features_test, labels_test, workspace_dir + "choose_your_own/")
