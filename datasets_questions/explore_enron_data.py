@@ -36,3 +36,19 @@ print counter
 # Query the Dataset 1
 print enron_data["PRENTICE JAMES"]["total_stock_value"]
 
+# Query the Dataset 2
+print enron_data["COLWELL WESLEY"]["from_this_person_to_poi"]
+
+# Query the Dataset 3
+print enron_data["SKILLING JEFFREY K"]["exercised_stock_options"]
+
+# Research the Enron Fraud
+# Follow the Money
+max(enron_data["SKILLING JEFFREY K"]["total_payments"],enron_data["LAY KENNETH L"]["total_payments"],
+    enron_data["FASTOW ANDREW S"]["total_payments"])
+
+
+
+
+
+
