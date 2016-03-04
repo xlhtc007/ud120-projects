@@ -47,6 +47,20 @@ print enron_data["SKILLING JEFFREY K"]["exercised_stock_options"]
 max(enron_data["SKILLING JEFFREY K"]["total_payments"],enron_data["LAY KENNETH L"]["total_payments"],
     enron_data["FASTOW ANDREW S"]["total_payments"])
 
+# Dealing with Unfilled Features
+counter = 0
+for k in enron_data.keys():
+    if type(enron_data[k]["salary"]) == int:
+        counter += 1
+
+print counter
+
+counter = 0
+for k in enron_data.keys():
+    if enron_data[k]["email_address"] != "NaN":
+        counter += 1
+
+print counter
 
 
 
