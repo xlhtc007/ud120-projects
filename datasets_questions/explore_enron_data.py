@@ -15,9 +15,12 @@
     
 """
 
+import sys
 import pickle
 workspace_dir = "C:/Users/dm1-3266/PycharmProjects/ud120-projects/"
 enron_data = pickle.load(open(workspace_dir + "final_project/final_project_dataset.pkl", "r"))
+sys.path.append(workspace_dir + "tools/")
+from feature_format import featureFormat
 
 # size of the Enron Datasets
 print len(enron_data)
@@ -62,7 +65,22 @@ for k in enron_data.keys():
 
 print counter
 
+# Missing POIs 1
+enron_array = featureFormat(enron_data, ['total_payments'])
+print 1.0 - float(len(enron_array))/float(len(enron_data))
 
 
+# Missing POIs 2
+# total POIs is 35
+# total POIs in datasets is 18
+poi_nan_names = []
+for k in enron_data.keys():
+    if enron_data[k]["total_payments"] == "NaN":
+        poi_nan_names.append(k)
+
+print poi_nan_names
 
 
+# Missing POIs 4
+print len(enron_data) + 10
+print len(enron_data) - len(enron_array) + 10
