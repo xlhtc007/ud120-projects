@@ -19,7 +19,6 @@ def outlierCleaner(predictions, ages, net_worths):
 
     cleaned_data = sorted(cleaned_data, key=lambda t: t[2])
     cleaned_data = cleaned_data[0:81]
-    print len(cleaned_data)
 
     return cleaned_data
 
